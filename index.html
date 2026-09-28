@@ -3,89 +3,137 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Een kleine vraag...</title>
+<title>Een Kleine Vraag 😊</title>
+
 <style>
 body{
-font-family: Arial, sans-serif;
-background: linear-gradient(135deg,#ffdf6b,#ffb3c1);
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-margin:0;
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#FFD54F,#FFB6C1);
 }
- 
+
 .card{
-background:white;
-padding:40px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
-max-width:500px;
+    background:white;
+    width:90%;
+    max-width:650px;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
 }
- 
+
 h1{
-color:#e63946;
+    color:#e63946;
 }
- 
+
 button{
-padding:12px 25px;
-margin:10px;
-border:none;
-border-radius:30px;
-cursor:pointer;
-font-size:16px;
-transition:0.3s;
+    padding:12px 22px;
+    margin:6px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    background:#4CAF50;
+    color:white;
+    font-size:16px;
+    transition:.3s;
 }
- 
-.yes{
-background:#4CAF50;
-color:white;
+
+button:hover{
+    transform:scale(1.05);
 }
- 
-.no{
-background:#e63946;
-color:white;
-position:relative;
+
+.option{
+    display:block;
+    width:260px;
+    margin:10px auto;
 }
- 
-#result{
-margin-top:20px;
-font-size:18px;
-font-weight:bold;
-color:#333;
+
+#content{
+    line-height:1.7;
+}
+
+select{
+    padding:10px;
+    border-radius:10px;
+    margin-top:10px;
+    width:250px;
+}
+
+label{
+    display:block;
+    margin-top:20px;
 }
 </style>
+
 </head>
+
 <body>
- 
+
 <div class="card">
+
+<div id="content">
+
 <h1>Hey 😊</h1>
+
 <p>
-Ik zat te denken...<br><br>
-Zou jij het leuk vinden om binnenkort samen iets te gaan eten in de Grote Hoef? 
+Sinds de Comedy Night bleef ik toch met één vraag zitten...
+<br><br>
+
+Ik heb even getwijfeld tussen gewoon een berichtje sturen of het iets origineler aanpakken.
+Omdat ik voor optie twee gekozen heb, ben je dus hier terechtgekomen. 😉
+<br><br>
+
+Ik vond het leuk om je te leren kennen en ik dacht:
+waarom niet gewoon vragen?
+<br><br>
+
+<b>Zou je het leuk vinden om binnenkort samen iets te gaan drinken?</b>
+<br><br>
+
+Kies gerust een tijdstip dat voor jou het beste past.
 </p>
- 
-<button class="yes" onclick="sayYes()">Ja 😊</button>
-<button class="no" id="noBtn">Nee 😅</button>
- 
-<div id="result"></div>
+
+<button onclick="chooseTime('17:30')">17:30</button>
+<button onclick="chooseTime('18:00')">18:00</button>
+<button onclick="chooseTime('18:30')">18:30</button>
+<button onclick="chooseTime('19:00')">19:00</button>
+
 </div>
- 
+
+</div>
+
 <script>
-function sayYes(){
-document.getElementById("result").innerHTML =
-"Top! 🎉 Dan mag je mij binnenkort vertellen wanneer je tijd hebt deze zaterdag😉";
-}
- 
-const noBtn = document.getElementById("noBtn");
- 
-noBtn.addEventListener("mouseover", () => {
-const x = Math.random() * 300 - 150;
-const y = Math.random() * 200 - 100;
-noBtn.style.transform = `translate(${x}px, ${y}px)`;
-});
-</script>
- 
-</body>
-</html>
+
+function chooseTime(time){
+
+document.getElementById("content").innerHTML = `
+
+<h1>Top! 🎉</h1>
+
+<p>
+
+Ik noteer voorlopig <b>${time}</b>.
+
+<br><br>
+
+Er is eigenlijk maar één voorwaarde voor deze date 😊
+
+<br><br>
+
+Blijf vooral lachen.
+Dat werkte tijdens de Comedy Night al behoorlijk aanstekelijk en ik heb het vermoeden dat ik daar tijdens na een drink alleen maar meer last van ga hebben. 😉
+
+<br><br>
+
+Maar voor we dit officieel maken heb ik nog twee belangrijke vragen.
+
+</p>
+
+<label><b>Heb je er écht zin in?</b></label>
+
+<select id="zin">
+<option>Absoluut
